@@ -39,14 +39,14 @@
 
 ## Проект выполнили:
 
-- Багина Дарья:
-Класс Stack
-Класс BST и Node
-Функции add_expense и undo_last для записи и отката расхода
-Команды меню command_add, command_undo, command_tree
+### Багина Дарья:
+- Класс Stack
+- Класс BST и Node
+- Функции add_expense и undo_last для записи и отката расхода
+- Команды меню command_add, command_undo, command_tree
 
-- Рудометова Виктория:
-Префиксные суммы (массивы daily и prefix) и функция rebuild_prefix
-Функции range_sum, max_expense_day, insertion_sort и top_categories
-Главный цикл main с меню
-Команды command_range, command_max_day, command_top
+### Рудометова Виктория:
+- Префиксные суммы (массивы daily и prefix) и функция rebuild_prefix
+- Функции range_sum, max_expense_day, insertion_sort и top_categories
+- Главный цикл main с меню
+- Команды command_range, command_max_day, command_top
