@@ -40,7 +40,7 @@ def show_rows(rows):
 def action_add(ledger):
     day = read_int(f"День (1-{DAYS}): ", 1, DAYS)
     amount = read_int("Сумма: ", 1, 10 ** 9)
-    category = input("Категория (пусто = без категории): ").strip()
+    category = input("Категория (введите enter для пропуска): ").strip()
     record = ledger.add(day, amount, category)
     print(f"Добавлен расход #{record['id']}.")
 
@@ -166,8 +166,8 @@ def main():
     if answer == "да":
         load_demo(ledger)
         print(f"Добавлено расходов: {len(ledger.records)}.")
+    print(MENU)
     while True:
-        print(MENU)
         choice = input("Выберите команду: ").strip()
         if choice == "0":
             print("Выход.")
