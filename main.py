@@ -31,7 +31,7 @@ def read_int(prompt, low, high):
         print(f"Введите целое число от {low} до {high}.")
 
 
-# выводит список троек (сумма, день, категория) из дерева
+# выводит список вида: (сумма, день, категория) из дерева
 def show_rows(rows):
     for amount, day, category in rows:
         print(f"  {amount} | день {day} | {category}")
