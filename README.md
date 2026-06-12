@@ -60,6 +60,7 @@
 - Методы Ledger add и undo для записи и отката расхода
 - Методы Ledger period_sum, month_total, by_amount и in_range
 - Команды action_add, action_undo, action_period, action_total, action_by_amount, action_in_range
+- Пункты меню 1, 2, 3, 5, 10, 11
 
 ### Рудометова Виктория:
 - Линейный поиск дня максимума, метод Ledger peak_day
