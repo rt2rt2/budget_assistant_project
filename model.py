@@ -1,10 +1,7 @@
 # модель данных бюджетного помощника
 # здесь собраны структуры данных и класс Ledger, который ведет учет расходов
 
-DAYS = 31   # учитываем один месяц, дни с 1 по 31
-
-
-# ==================== структуры данных ====================
+DAYS = 31
 
 # стек на списке, в нем держим номера расходов для отмены последнего добавления
 class Stack:
@@ -100,10 +97,7 @@ class BST:
             node.right = self._remove(node.right, heir.key)
         return node
 
-
-# ==================== учет расходов ====================
-
-# проверяет поля и собирает запись о расходе, при ошибке кидает ValueError
+# проверяет поля и собирает запись о расходе, при ошибке возвращает ValueError
 def make_record(number, day, amount, category):
     if not 1 <= day <= DAYS:
         raise ValueError(f"день должен быть от 1 до {DAYS}")
@@ -122,7 +116,11 @@ def make_record(number, day, amount, category):
 
 # строка с данными расхода для вывода на экран
 def record_line(record):
-    return f"#{record['id']} день {record['day']}, {record['amount']}, {record['category']}"
+    number = record["id"]
+    day = record["day"]
+    amount = record["amount"]
+    category = record["category"]
+    return f"#{number} день {day}, {amount}, {category}"
 
 
 # ведет список расходов, дневные и накопленные суммы, дерево, стек отмены и лимиты
@@ -169,7 +167,7 @@ class Ledger:
         self.recompute_prefix()
         return record
 
-    # сумма расходов за период с дня a по день b, ответ за O(1)
+    # сумма расходов за период с дня a по день b
     def period_sum(self, a, b):
         return self.prefix[b] - self.prefix[a - 1]
 
