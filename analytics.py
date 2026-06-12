@@ -32,7 +32,7 @@ def top_categories(records, limit=5):
     return pairs[:limit]
 
 
-# по каждой категории сумма, число трат, средний чек и доля в процентах
+# по каждой категории: сумма, число трат, средний чек и доля в процентах
 def category_report(records):
     totals = category_totals(records)
     counts = {}
@@ -62,7 +62,7 @@ def limit_report(records, limits):
     return rows
 
 
-# расходы по дням, для каждого дня с тратами строка вида день и сумма
+# расходы по дням, для каждого дня с тратами. строка вида: день и сумма
 def daily_chart(daily):
     lines = []
     for day in range(1, DAYS + 1):
