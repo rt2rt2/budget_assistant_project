@@ -62,21 +62,10 @@ def limit_report(records, limits):
     return rows
 
 
-# текстовая диаграмма расходов по дням, длина полоски пропорциональна сумме
-def daily_chart(daily, width=30):
+# расходы по дням, для каждого дня с тратами строка вида день и сумма
+def daily_chart(daily):
     lines = []
-    peak = 0
     for day in range(1, DAYS + 1):
-        if daily[day] > peak:
-            peak = daily[day]
-    if peak == 0:
-        return lines
-    for day in range(1, DAYS + 1):
-        amount = daily[day]
-        if amount == 0:
-            continue
-        bar = round(amount / peak * width)
-        if bar < 1:
-            bar = 1
-        lines.append(f"{day}: {'#' * bar} {amount}")
+        if daily[day] > 0:
+            lines.append(f"{day}: {daily[day]}")
     return lines
